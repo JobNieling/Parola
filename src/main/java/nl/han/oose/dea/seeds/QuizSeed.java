@@ -1,19 +1,15 @@
 package nl.han.oose.dea.seeds;
 
+import java.util.List;
+
 public class QuizSeed {
-    private String question;
-    private String answer;
+    private List<QuestionSeed> questions;
 
-    public QuizSeed(String question, String answer) {
-        this.question = question;
-        this.answer = answer;
+    public QuizSeed(List<QuestionSeed> questions) {
+        this.questions = questions;
     }
 
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
+    public List<QuestionSeed> getQuestions() {
+        return questions;
     }
 }
