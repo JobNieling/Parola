@@ -65,7 +65,7 @@ public class QuizPerformance {
     }
 
     public void setStartTime(LocalDateTime startTime) {
-        QuizPerformance.startTime = startTime;
+        this.startTime = startTime;
     }
 
     public LocalDateTime getEndTime() {
@@ -73,7 +73,7 @@ public class QuizPerformance {
     }
 
     public void setEndTime(LocalDateTime endTime) {
-        QuizPerformance.endTime = endTime;
+        this.endTime = endTime;
     }
 
     public List<String> getPlayerAnswers() {
