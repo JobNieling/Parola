@@ -10,4 +10,12 @@ public class Answer {
     }
 
     // getters and setters
+
+    public List<String> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<String> answers) {
+        this.answers = answers;
+    }
 }

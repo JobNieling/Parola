@@ -19,4 +19,20 @@ public class MultipleChoiceQuestion extends Question {
     }
 
     // getters and setters
+
+    public List<Answer> getWrongAnswers() {
+        return wrongAnswers;
+    }
+
+    public void setWrongAnswers(List<Answer> wrongAnswers) {
+        this.wrongAnswers = wrongAnswers;
+    }
+
+    public Answer getRightAnswer() {
+        return rightAnswer;
+    }
+
+    public void setRightAnswer(Answer rightAnswer) {
+        this.rightAnswer = rightAnswer;
+    }
 }

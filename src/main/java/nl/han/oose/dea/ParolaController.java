@@ -1,5 +1,7 @@
 package nl.han.oose.dea;
 
+import nl.han.oose.dea.score.ScoreStrategy;
+
 public class ParolaController {
     private Player player;
     private Quiz quiz;
@@ -35,5 +37,31 @@ public class ParolaController {
     public int calculateScore(String playername, String word) {
         // Calculate the score
         return scoreStrategy.calculateScore(player, quiz);
+    }
+
+    // getters and setters...
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
+
+    public ScoreStrategy getScoreStrategy() {
+        return scoreStrategy;
+    }
+
+    public void setScoreStrategy(ScoreStrategy scoreStrategy) {
+        this.scoreStrategy = scoreStrategy;
     }
 }

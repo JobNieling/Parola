@@ -1,4 +1,9 @@
-package nl.han.oose.dea;
+package nl.han.oose.dea.score;
+
+import nl.han.oose.dea.GivenAnswer;
+import nl.han.oose.dea.Player;
+import nl.han.oose.dea.Quiz;
+import nl.han.oose.dea.score.ScoreStrategy;
 
 public class RightAnswerScoreStrategy implements ScoreStrategy {
     @Override
