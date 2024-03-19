@@ -1,9 +1,18 @@
 package nl.han.oose.dea;
 
-public class Question {
-    private String text;
-    private String correctAnswer;
-    private char letter;
+public abstract class Question {
+    private String question;
+    private String category;
+    private String letter;
+    private boolean isActive;
 
-    // constructor, getters, setters
+    public Question(String question, String category, String letter, boolean isActive) {
+        this.question = question;
+        this.category = category;
+        this.letter = letter;
+        this.isActive = isActive;
+    }
+
+    // getters and setters
+    public abstract boolean checkAnswer(Answer answer);
 }
