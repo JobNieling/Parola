@@ -17,4 +17,11 @@ public class ShortAnswerQuestion extends Question {
     }
 
     // getters and setters
+    public List<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
+    }
 }

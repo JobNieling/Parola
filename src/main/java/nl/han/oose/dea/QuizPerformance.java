@@ -10,8 +10,8 @@ public class QuizPerformance {
     private Quiz quiz;
     private Player player;
     private ScoreStrategy scoreStrategy;
-    private static LocalDateTime startTime;
-    private static LocalDateTime endTime;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
     private List<String> playerAnswers;
 
     public QuizPerformance(Quiz quiz, Player player, ScoreStrategy scoreStrategy) {
@@ -60,7 +60,7 @@ public class QuizPerformance {
         this.scoreStrategy = scoreStrategy;
     }
 
-    public static LocalDateTime getStartTime() {
+    public LocalDateTime getStartTime() {
         return startTime;
     }
 
@@ -68,7 +68,7 @@ public class QuizPerformance {
         QuizPerformance.startTime = startTime;
     }
 
-    public static LocalDateTime getEndTime() {
+    public LocalDateTime getEndTime() {
         return endTime;
     }
 
@@ -90,14 +90,6 @@ public class QuizPerformance {
 
     public void removePlayerAnswer(String playerAnswer) {
         this.playerAnswers.remove(playerAnswer);
-    }
-
-    public void updatePlayerAnswer(String playerAnswer) {
-        for (String pa : playerAnswers) {
-            if (pa.equals(playerAnswer)) {
-                pa = playerAnswer;
-            }
-        }
     }
 
     public void addPlayerAnswers(List<String> playerAnswers) {

@@ -5,7 +5,6 @@ import nl.han.oose.dea.score.ScoreStrategy;
 public class ParolaController {
     private Player player;
     private Quiz quiz;
-    private ScoreStrategy scoreStrategy;
 
     public static ParolaController getInstance() {
         return new ParolaController();
@@ -29,16 +28,6 @@ public class ParolaController {
         return false;
     }
 
-    public String getLettersForRightAnswers(String playername) {
-        // Get the letters for the right answers
-        return "A, B, C";
-    }
-
-    public int calculateScore(String playername, String word) {
-        // Calculate the score
-        return scoreStrategy.calculateScore(player, quiz);
-    }
-
     // getters and setters...
 
     public Player getPlayer() {
@@ -55,13 +44,5 @@ public class ParolaController {
 
     public void setQuiz(Quiz quiz) {
         this.quiz = quiz;
-    }
-
-    public ScoreStrategy getScoreStrategy() {
-        return scoreStrategy;
-    }
-
-    public void setScoreStrategy(ScoreStrategy scoreStrategy) {
-        this.scoreStrategy = scoreStrategy;
     }
 }

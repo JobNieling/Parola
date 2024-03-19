@@ -1,5 +1,7 @@
 package nl.han.oose.dea;
 
+import nl.han.oose.dea.score.ScoreStrategy;
+
 import java.util.List;
 
 public class Quiz {
@@ -11,6 +13,18 @@ public class Quiz {
         this.quizName = quizName;
         this.questions = questions;
         this.quizPerformances = quizPerformances;
+    }
+
+    // methods
+    public void startQuiz(Player player, ScoreStrategy scoreStrategy) {
+        QuizPerformance quizPerformance = new QuizPerformance(this, player, scoreStrategy);
+        quizPerformance.start();
+    }
+
+    public void endQuiz() {
+        for (QuizPerformance quizPerformance : quizPerformances) {
+            quizPerformance.end();
+        }
     }
 
     // getters and setters
