@@ -1,12 +1,12 @@
 package nl.han.oose.ooad.parola;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class MultipleChoiceQuestion extends Question {
-    private List<Answer> wrongAnswers;
+    private ArrayList<Answer> wrongAnswers;
     private Answer rightAnswer;
 
-    public MultipleChoiceQuestion(String question, String category, String letter, boolean isActive, List<Answer> wrongAnswers, Answer rightAnswer) {
+    public MultipleChoiceQuestion(String question, String category, String letter, boolean isActive, ArrayList<Answer> wrongAnswers, Answer rightAnswer) {
         super(question, category, letter, isActive);
         this.wrongAnswers = wrongAnswers;
         this.rightAnswer = rightAnswer;
@@ -20,11 +20,11 @@ public class MultipleChoiceQuestion extends Question {
 
     // getters and setters
 
-    public List<Answer> getWrongAnswers() {
+    public ArrayList<Answer> getWrongAnswers() {
         return wrongAnswers;
     }
 
-    public void setWrongAnswers(List<Answer> wrongAnswers) {
+    public void setWrongAnswers(ArrayList<Answer> wrongAnswers) {
         this.wrongAnswers = wrongAnswers;
     }
 

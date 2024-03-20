@@ -1,30 +1,30 @@
 package nl.han.oose.ooad.parola;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class GivenAnswer {
 
-    private List<String> answer;
-    private List<Boolean> correct;
+    private ArrayList<String> answer;
+    private ArrayList<Boolean> correct;
 
-    public GivenAnswer(List<String> answer, List<Boolean> correct) {
+    public GivenAnswer(ArrayList<String> answer, ArrayList<Boolean> correct) {
         this.answer = answer;
         this.correct = correct;
     }
 
-    public List<String> getAnswer() {
+    public ArrayList<String> getAnswer() {
         return answer;
     }
 
-    public List<Boolean> getCorrect() {
+    public ArrayList<Boolean> getCorrect() {
         return correct;
     }
 
-    public void setAnswer(List<String> answer) {
+    public void setAnswer(ArrayList<String> answer) {
         this.answer = answer;
     }
 
-    public void setCorrect(List<Boolean> correct) {
+    public void setCorrect(ArrayList<Boolean> correct) {
         this.correct = correct;
     }
 }

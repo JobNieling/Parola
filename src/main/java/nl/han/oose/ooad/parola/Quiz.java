@@ -2,14 +2,14 @@ package nl.han.oose.ooad.parola;
 
 import nl.han.oose.ooad.parola.score.ScoreStrategy;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Quiz {
     private String quizName;
-    private List<Question> questions;
-    private List<QuizPerformance> quizPerformances;
+    private ArrayList<Question> questions;
+    private ArrayList<QuizPerformance> quizPerformances;
 
-    public Quiz(String quizName, List<Question> questions, List<QuizPerformance> quizPerformances) {
+    public Quiz(String quizName, ArrayList<Question> questions, ArrayList<QuizPerformance> quizPerformances) {
         this.quizName = quizName;
         this.questions = questions;
         this.quizPerformances = quizPerformances;
@@ -37,19 +37,19 @@ public class Quiz {
         return quizName;
     }
 
-    public void setQuestions(List<Question> questions) {
+    public void setQuestions(ArrayList<Question> questions) {
         this.questions = questions;
     }
 
-    public List<Question> getQuestions() {
+    public ArrayList<Question> getQuestions() {
         return questions;
     }
 
-    public void setQuizPerformances(List<QuizPerformance> quizPerformances) {
+    public void setQuizPerformances(ArrayList<QuizPerformance> quizPerformances) {
         this.quizPerformances = quizPerformances;
     }
 
-    public List<QuizPerformance> getQuizPerformances() {
+    public ArrayList<QuizPerformance> getQuizPerformances() {
         return quizPerformances;
     }
 

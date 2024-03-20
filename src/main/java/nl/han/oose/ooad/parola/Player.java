@@ -1,14 +1,16 @@
 package nl.han.oose.ooad.parola;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
     private String username;
     private String password;
     private int credits;
-    private List<QuizPerformance> quizPerformances;
+    private
+    ArrayList<QuizPerformance> quizPerformances;
 
-    public Player(String username, String password, int credits, List<QuizPerformance> quizPerformances) {
+    public Player(String username, String password, int credits, ArrayList<QuizPerformance> quizPerformances) {
         this.username = username;
         this.password = password;
         this.credits = credits;
@@ -41,11 +43,11 @@ public class Player {
         return credits;
     }
 
-    public void setQuizPerformances(List<QuizPerformance> quizPerformances) {
+    public void setQuizPerformances(ArrayList<QuizPerformance> quizPerformances) {
         this.quizPerformances = quizPerformances;
     }
 
-    public List<QuizPerformance> getQuizPerformances() {
+    public ArrayList<QuizPerformance> getQuizPerformances() {
         return quizPerformances;
     }
 

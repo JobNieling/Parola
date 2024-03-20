@@ -12,7 +12,7 @@ public class QuizPerformance {
     private ScoreStrategy scoreStrategy;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
-    private List<String> playerAnswers;
+    private ArrayList<String> playerAnswers;
 
     public QuizPerformance(Quiz quiz, Player player, ScoreStrategy scoreStrategy) {
         this.quiz = quiz;
@@ -76,11 +76,11 @@ public class QuizPerformance {
         this.endTime = endTime;
     }
 
-    public List<String> getPlayerAnswers() {
+    public ArrayList<String> getPlayerAnswers() {
         return playerAnswers;
     }
 
-    public void setPlayerAnswers(List<String> playerAnswers) {
+    public void setPlayerAnswers(ArrayList<String> playerAnswers) {
         this.playerAnswers = playerAnswers;
     }
 
@@ -92,11 +92,11 @@ public class QuizPerformance {
         this.playerAnswers.remove(playerAnswer);
     }
 
-    public void addPlayerAnswers(List<String> playerAnswers) {
+    public void addPlayerAnswers(ArrayList<String> playerAnswers) {
         this.playerAnswers.addAll(playerAnswers);
     }
 
-    public void removePlayerAnswers(List<String> playerAnswers) {
+    public void removePlayerAnswers(ArrayList<String> playerAnswers) {
         this.playerAnswers.removeAll(playerAnswers);
     }
 }
