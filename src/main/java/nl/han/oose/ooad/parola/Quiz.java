@@ -1,6 +1,6 @@
-package nl.han.oose.dea;
+package nl.han.oose.ooad.parola;
 
-import nl.han.oose.dea.score.ScoreStrategy;
+import nl.han.oose.ooad.parola.score.ScoreStrategy;
 
 import java.util.List;
 

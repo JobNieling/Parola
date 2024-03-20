@@ -1,4 +1,4 @@
-package nl.han.oose.dea;
+package nl.han.oose.ooad.parola;
 
 import java.util.List;
 

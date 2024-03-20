@@ -1,9 +1,8 @@
-package nl.han.oose.dea.score;
+package nl.han.oose.ooad.parola.score;
 
-import nl.han.oose.dea.Player;
-import nl.han.oose.dea.Quiz;
-import nl.han.oose.dea.QuizPerformance;
-import nl.han.oose.dea.score.ScoreStrategy;
+import nl.han.oose.ooad.parola.Player;
+import nl.han.oose.ooad.parola.Quiz;
+import nl.han.oose.ooad.parola.QuizPerformance;
 
 import java.time.Duration;
 

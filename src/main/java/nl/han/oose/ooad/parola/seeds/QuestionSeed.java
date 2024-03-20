@@ -1,4 +1,4 @@
-package nl.han.oose.dea.seeds;
+package nl.han.oose.ooad.parola.seeds;
 
 public class QuestionSeed {
     private String question;

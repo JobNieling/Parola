@@ -1,6 +1,4 @@
-package nl.han.oose.dea;
-
-import nl.han.oose.dea.score.ScoreStrategy;
+package nl.han.oose.ooad.parola;
 
 public class ParolaController {
     private Player player;
@@ -44,5 +42,13 @@ public class ParolaController {
 
     public void setQuiz(Quiz quiz) {
         this.quiz = quiz;
+    }
+
+    public String getLettersForRightAnswers(String playername) {
+        return null;
+    }
+
+    public int calculateScore(String playername, String word) {
+        return 0;
     }
 }
