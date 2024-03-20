@@ -1,4 +1,4 @@
-package nl.han.oose.ooad.parola.domain.question;
+package nl.han.oose.ooad.parola.application.question;
 
 import java.util.ArrayList;
 
@@ -6,14 +6,14 @@ public class MultipleChoiceQuestion extends Question {
     private ArrayList<Answer> wrongAnswers;
     private Answer rightAnswer;
 
-    public MultipleChoiceQuestion(String question, String category, String letter, boolean isActive, ArrayList<Answer> wrongAnswers, Answer rightAnswer) {
+    public MultipleChoiceQuestion(String question, String category, Character letter, boolean isActive, Answer rightAnswer, ArrayList<Answer> wrongAnswers) {
         super(question, category, letter, isActive);
         this.wrongAnswers = wrongAnswers;
         this.rightAnswer = rightAnswer;
     }
 
     @Override
-    public boolean checkAnswer(Answer answer) {
+    public boolean checkAnswer(String answer) {
         // implement the logic to check the answer
         return false;
     }

@@ -1,4 +1,4 @@
-package nl.han.oose.ooad.parola.domain;
+package nl.han.oose.ooad.parola.application;
 
 import java.util.ArrayList;
 
@@ -7,13 +7,20 @@ public class Player {
     private String password;
     private int credits;
     private
-    ArrayList<QuizPerformance> quizPerformances;
+    ArrayList<QuizPerformance> quizPerformances = new ArrayList<>();
 
-    public Player(String username, String password, int credits, ArrayList<QuizPerformance> quizPerformances) {
+    public Player(String username, String password, int credits) {
         this.username = username;
         this.password = password;
         this.credits = credits;
-        this.quizPerformances = quizPerformances;
+    }
+
+    public boolean payCredits(int i) {
+        if (credits >= i) {
+            credits -= i;
+            return true;
+        }
+        return false;
     }
 
     // getters and setters

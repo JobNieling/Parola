@@ -1,6 +1,4 @@
-package nl.han.oose.ooad.parola.domain.question;
-
-import java.util.ArrayList;
+package nl.han.oose.ooad.parola.application.question;
 
 public class Answer {
     private String answer;

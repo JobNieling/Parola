@@ -1,12 +1,12 @@
-package nl.han.oose.ooad.parola.domain.question;
+package nl.han.oose.ooad.parola.application.question;
 
 public abstract class Question {
     private String question;
     private String category;
-    private String letter;
+    private Character letter;
     private boolean isActive;
 
-    public Question(String question, String category, String letter, boolean isActive) {
+    public Question(String question, String category, Character letter, boolean isActive) {
         this.question = question;
         this.category = category;
         this.letter = letter;
@@ -14,7 +14,7 @@ public abstract class Question {
     }
 
     // getters and setters
-    public abstract boolean checkAnswer(Answer answer);
+    public abstract boolean checkAnswer(String answer);
 
     public String getQuestion() {
         return question;
@@ -32,11 +32,11 @@ public abstract class Question {
         this.category = category;
     }
 
-    public String getLetter() {
+    public Character getLetter() {
         return letter;
     }
 
-    public void setLetter(String letter) {
+    public void setLetter(Character letter) {
         this.letter = letter;
     }
 

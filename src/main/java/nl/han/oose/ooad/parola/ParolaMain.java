@@ -1,5 +1,7 @@
 package nl.han.oose.ooad.parola;
 
+import nl.han.oose.ooad.parola.application.ParolaController;
+
 import java.util.Scanner;
 
 public class ParolaMain {
