@@ -1,4 +1,4 @@
-package nl.han.oose.ooad.parola;
+package nl.han.oose.ooad.parola.domain;
 
 import java.util.ArrayList;
 

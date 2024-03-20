@@ -1,10 +1,9 @@
-package nl.han.oose.ooad.parola;
+package nl.han.oose.ooad.parola.domain;
 
 import nl.han.oose.ooad.parola.score.ScoreStrategy;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.List;
 
 public class QuizPerformance {
     private Quiz quiz;

@@ -1,7 +1,6 @@
-package nl.han.oose.ooad.parola;
+package nl.han.oose.ooad.parola.domain.question;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ShortAnswerQuestion extends Question {
     private ArrayList<Answer> answers;

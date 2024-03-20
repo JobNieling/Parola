@@ -1,8 +1,13 @@
 package nl.han.oose.ooad.parola;
 
+import nl.han.oose.ooad.parola.domain.Player;
+import nl.han.oose.ooad.parola.domain.Quiz;
+
+import java.util.ArrayList;
+
 public class ParolaController {
-    private Player player;
-    private Quiz quiz;
+    private ArrayList<Player> players;
+    private ArrayList<Quiz> quizzen;
 
     public static ParolaController getInstance() {
         return new ParolaController();
@@ -28,20 +33,20 @@ public class ParolaController {
 
     // getters and setters...
 
-    public Player getPlayer() {
-        return player;
+    public ArrayList<Player> getPlayers() {
+        return players;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setPlayers(ArrayList<Player> players) {
+        this.players = players;
     }
 
-    public Quiz getQuiz() {
-        return quiz;
+    public ArrayList<Quiz> getQuizzen() {
+        return quizzen;
     }
 
-    public void setQuiz(Quiz quiz) {
-        this.quiz = quiz;
+    public void setQuizzen(ArrayList<Quiz> quizzen) {
+        this.quizzen = quizzen;
     }
 
     public String getLettersForRightAnswers(String playername) {

@@ -1,8 +1,8 @@
 package nl.han.oose.ooad.parola.score;
 
-import nl.han.oose.ooad.parola.Player;
-import nl.han.oose.ooad.parola.Quiz;
-import nl.han.oose.ooad.parola.QuizPerformance;
+import nl.han.oose.ooad.parola.domain.Player;
+import nl.han.oose.ooad.parola.domain.Quiz;
+import nl.han.oose.ooad.parola.domain.QuizPerformance;
 
 import java.time.Duration;
 

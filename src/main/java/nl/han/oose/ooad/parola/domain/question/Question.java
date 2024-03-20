@@ -1,4 +1,4 @@
-package nl.han.oose.ooad.parola;
+package nl.han.oose.ooad.parola.domain.question;
 
 public abstract class Question {
     private String question;

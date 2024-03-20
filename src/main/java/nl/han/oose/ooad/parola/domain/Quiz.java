@@ -1,5 +1,6 @@
-package nl.han.oose.ooad.parola;
+package nl.han.oose.ooad.parola.domain;
 
+import nl.han.oose.ooad.parola.domain.question.Question;
 import nl.han.oose.ooad.parola.score.ScoreStrategy;
 
 import java.util.ArrayList;
