@@ -13,7 +13,6 @@ public abstract class Question {
         this.isActive = isActive;
     }
 
-    // getters and setters
     public abstract boolean checkAnswer(String answer);
 
     public abstract String getQuestionText();
@@ -21,6 +20,7 @@ public abstract class Question {
     public String getQuestion() {
         return question;
     }
+    // getters and setters
 
     public void setQuestion(String question) {
         this.question = question;

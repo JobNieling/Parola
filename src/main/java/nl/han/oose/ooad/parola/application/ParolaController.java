@@ -28,7 +28,8 @@ public class ParolaController {
     }
 
     private QuizPerformance getCurrentQuizPerformance(Player player) {
-        return player.getQuizPerformances().get(player.getQuizPerformances().size() - 1);
+        ArrayList<QuizPerformance> QPs = player.getQuizPerformances();
+        return QPs.get(QPs.size() - 1);
     }
 
     public String nextQuestion(String playername) {
@@ -59,7 +60,9 @@ public class ParolaController {
         ArrayList<Character> letters = currentQuizPerformance.getLetters();
         String letterString = "";
         for (Character c : letters) {
-            letterString = letterString + c + " ";
+            if (c != null) {
+                letterString = letterString + c + " ";
+            }
         }
         return "\n" + letterString;
     }

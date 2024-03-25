@@ -26,7 +26,7 @@ public class MultipleChoiceQuestion extends Question {
         allAsnwers.add(rightAnswer);
         allAsnwers.addAll(wrongAnswers);
         Collections.shuffle(allAsnwers);
-        return getCategory() + " - " + getQuestion() + " " + allAsnwers;
+        return getCategory() + " - " + getQuestion() + "\n" + allAsnwers;
     }
 
     // getters and setters
