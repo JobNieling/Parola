@@ -1,27 +1,37 @@
 package nl.han.oose.ooad.parola.application.question;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ShortAnswerQuestion extends Question {
-    private ArrayList<Answer> answers;
+    private ArrayList<String> answers;
 
-    public ShortAnswerQuestion(String question, String category, Character letter, boolean isActive, ArrayList<Answer> answers) {
+    public ShortAnswerQuestion(String question, String category, Character letter, boolean isActive, ArrayList<String> answers) {
         super(question, category, letter, isActive);
         this.answers = answers;
     }
 
     @Override
     public boolean checkAnswer(String answer) {
-        // implement the logic to check the answer
+        for (String rightAnswer : answers) {
+            if (Objects.equals(answer, rightAnswer)) {
+                return true;
+            }
+        }
         return false;
     }
 
+    @Override
+    public String getQuestionText() {
+        return getCategory() + " - " + getQuestion();
+    }
+
     // getters and setters
-    public ArrayList<Answer> getAnswers() {
+    public ArrayList<String> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(ArrayList<Answer> answers) {
+    public void setAnswers(ArrayList<String> answers) {
         this.answers = answers;
     }
 }

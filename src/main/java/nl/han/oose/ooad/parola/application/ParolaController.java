@@ -36,7 +36,7 @@ public class ParolaController {
         Player player = getPlayer(playername);
         QuizPerformance currentQuizPerformance = getCurrentQuizPerformance(player);
         Question question = currentQuizPerformance.getNextQuestion();
-        return question.getQuestion();
+        return "\n" + question.getQuestionText();
     }
 
     public void processAnswer(String playername, String answer) {
@@ -61,7 +61,7 @@ public class ParolaController {
         for (Character c : letters) {
             letterString = letterString + c + " ";
         }
-        return letterString;
+        return "\n" + letterString;
     }
 
     public int calculateScore(String playername, String word) {

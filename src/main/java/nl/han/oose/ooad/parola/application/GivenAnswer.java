@@ -11,7 +11,7 @@ public class GivenAnswer {
     public GivenAnswer(String answer, Question question) {
         this.answer = answer;
         this.question = question;
-        question.checkAnswer(answer);
+        this.correct = question.checkAnswer(answer);
     }
 
     public Character getLetterIfCorrect() {

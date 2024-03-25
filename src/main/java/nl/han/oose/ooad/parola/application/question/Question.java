@@ -16,6 +16,8 @@ public abstract class Question {
     // getters and setters
     public abstract boolean checkAnswer(String answer);
 
+    public abstract String getQuestionText();
+
     public String getQuestion() {
         return question;
     }
