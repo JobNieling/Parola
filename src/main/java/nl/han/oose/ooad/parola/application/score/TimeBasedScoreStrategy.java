@@ -6,16 +6,16 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class BasicScoreStrategy implements ScoreStrategy{
+public class TimeBasedScoreStrategy implements ScoreStrategy {
     @Override
     public int calculateScore(LocalDateTime startTime, LocalDateTime endTime, ArrayList<GivenAnswer> playerAnswers, String word) {
+        // Calculate the duration between the start and end time in minutes
         long duration = Duration.between(startTime, endTime).toMinutes();
-        int wordLength = word.length();
-        long correctAnswers = playerAnswers.stream().filter(GivenAnswer::isCorrect).count();
 
-        int durationScore = (int) duration * 10;
-        int wordLengthScore = wordLength * 5;
-        int correctAnswersScore = (int) correctAnswers * 20;
-        return wordLengthScore + correctAnswersScore + durationScore;
+        // Calculate the score: for every minute played, the player loses 10 points
+        // The maximum amount of time is 10 minutes, so the maximum score loss is 100 points
+        int score = (int) duration * 10;
+
+        return score;
     }
 }

@@ -20,4 +20,8 @@ public class GivenAnswer {
         }
         return null;
     }
+
+    public Boolean isCorrect() {
+        return correct;
+    }
 }
