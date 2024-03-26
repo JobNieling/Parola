@@ -14,7 +14,7 @@ public class ShortAnswerQuestion extends Question {
     @Override
     public boolean checkAnswer(String answer) {
         for (String rightAnswer : answers) {
-            if (Objects.equals(answer, rightAnswer)) {
+            if (Objects.equals(answer.toLowerCase(), rightAnswer.toLowerCase())) {
                 return true;
             }
         }

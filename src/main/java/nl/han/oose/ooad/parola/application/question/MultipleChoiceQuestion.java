@@ -17,7 +17,7 @@ public class MultipleChoiceQuestion extends Question {
 
     @Override
     public boolean checkAnswer(String answer) {
-        return Objects.equals(answer, rightAnswer);
+        return Objects.equals(answer.toLowerCase(), rightAnswer.toLowerCase());
     }
 
     @Override

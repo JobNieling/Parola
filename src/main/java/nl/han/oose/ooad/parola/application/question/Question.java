@@ -17,10 +17,10 @@ public abstract class Question {
 
     public abstract String getQuestionText();
 
+    // getters and setters
     public String getQuestion() {
         return question;
     }
-    // getters and setters
 
     public void setQuestion(String question) {
         this.question = question;
