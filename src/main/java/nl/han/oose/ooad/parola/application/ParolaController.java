@@ -24,6 +24,8 @@ public class ParolaController {
         Player player = getPlayer(playername);
         if (player.payCredits(40)) {
             player.addQuizPerformance(new QuizPerformance(quizzen.get(0), new BasicScoreStrategy()));
+        } else {
+            throw new RuntimeException("Player doesn't have enough credits!");
         }
     }
 
@@ -71,6 +73,15 @@ public class ParolaController {
         return 0;
     }
 
+    private Player getPlayer(String playername) {
+        for (Player player : players) {
+            if (Objects.equals(player.getUsername(), playername)) {
+                return player;
+            }
+        }
+        throw new RuntimeException("Player not found!");
+    }
+
     // getters and setters...
 
     public ArrayList<Player> getPlayers() {
@@ -79,15 +90,6 @@ public class ParolaController {
 
     public void setPlayers(ArrayList<Player> players) {
         this.players = players;
-    }
-
-    public Player getPlayer(String playername) {
-        for (Player player : players) {
-            if (Objects.equals(player.getUsername(), playername)) {
-                return player;
-            }
-        }
-        throw new RuntimeException("Player not found");
     }
 
     public ArrayList<Quiz> getQuizzen() {
