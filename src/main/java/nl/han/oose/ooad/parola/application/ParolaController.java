@@ -70,7 +70,10 @@ public class ParolaController {
     }
 
     public int calculateScore(String playername, String word) {
-        return 0;
+        Player player = getPlayer(playername);
+        QuizPerformance currentQuizPerformance = getCurrentQuizPerformance(player);
+        currentQuizPerformance.end();
+        return currentQuizPerformance.finalizeQuizPerformance(word);
     }
 
     private Player getPlayer(String playername) {

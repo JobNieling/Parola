@@ -27,7 +27,12 @@ public class QuizPerformance {
 
     public void end() {
         endTime = LocalDateTime.now();
+    }
+
+    public int finalizeQuizPerformance(String word) {
+        this.word = word;
         score = scoreStrategy.calculateScore(startTime, endTime, playerAnswers, word);
+        return score;
     }
 
     public Question getNextQuestion() {
@@ -45,8 +50,8 @@ public class QuizPerformance {
 
     public ArrayList<Character> getLetters() {
         ArrayList<Character> letters = new ArrayList<>();
-        for (GivenAnswer givenAsnwer : playerAnswers) {
-            letters.add(givenAsnwer.getLetterIfCorrect());
+        for (GivenAnswer givenAnswer : playerAnswers) {
+            letters.add(givenAnswer.getLetterIfCorrect());
         }
         return letters;
     }
