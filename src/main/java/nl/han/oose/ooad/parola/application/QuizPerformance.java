@@ -57,4 +57,8 @@ public class QuizPerformance {
     }
 
     // getters and setters...
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
 }

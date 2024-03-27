@@ -5,6 +5,7 @@ import nl.han.oose.ooad.parola.application.question.Question;
 import nl.han.oose.ooad.parola.application.score.BasicScoreStrategy;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
 public class ParolaController {
@@ -23,9 +24,22 @@ public class ParolaController {
         // Start the quiz
         Player player = getPlayer(playername);
         if (player.payCredits(40)) {
-            player.addQuizPerformance(new QuizPerformance(quizzen.get(0), new BasicScoreStrategy()));
+            // Find unplayed quizzen
+            ArrayList<Quiz> playedQuizzen = new ArrayList<>(player.getQuizPerformances().stream().map(QuizPerformance::getQuiz).toList());
+            ArrayList<Quiz> unplayedQuizzen = new ArrayList<>(quizzen);
+            for (Quiz playedQuiz : playedQuizzen) {
+                unplayedQuizzen.remove(playedQuiz);
+            }
+            Collections.shuffle(unplayedQuizzen);
+            Quiz quiz;
+            if (!unplayedQuizzen.isEmpty()) {
+                 quiz = unplayedQuizzen.get(0);
+            } else {
+                quiz = quizzen.get(0);
+            }
+            player.addQuizPerformance(new QuizPerformance(quiz, new BasicScoreStrategy()));
         } else {
-            throw new RuntimeException("Player doesn't have enough credits!");
+            throw new RuntimeException(playername + "heeft niet genoeg credits om een nieuwe quiz te spelen!");
         }
     }
 
@@ -82,7 +96,7 @@ public class ParolaController {
                 return player;
             }
         }
-        throw new RuntimeException("Player not found!");
+        throw new RuntimeException("De speler met naam \"" + playername + "\" kan niet worden gevonden!");
     }
 
     // getters and setters...
