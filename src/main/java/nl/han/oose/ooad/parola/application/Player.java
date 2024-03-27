@@ -30,8 +30,7 @@ public class Player {
 
     public String getNextQuestionTextFromCurrentQuiz() {
         QuizPerformance currentQuizPerformance = getCurrentQuizPerformance();
-        String nextQuestionText = currentQuizPerformance.getNextQuestionText();
-        return nextQuestionText;
+        return currentQuizPerformance.getNextQuestionText();
     }
 
     public void processAnswerForCurrentQuiz(String answer) {
