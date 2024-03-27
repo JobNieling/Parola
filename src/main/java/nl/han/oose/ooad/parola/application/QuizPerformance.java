@@ -7,10 +7,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class QuizPerformance {
-    private Quiz quiz;
+    private final Quiz quiz;
     private int score;
-    private ScoreStrategy scoreStrategy;
-    private LocalDateTime startTime;
+    private final ScoreStrategy scoreStrategy;
+    private final LocalDateTime startTime;
     private LocalDateTime endTime;
     private ArrayList<GivenAnswer> playerAnswers = new ArrayList<>();
     private String word;
@@ -75,5 +75,45 @@ public class QuizPerformance {
 
     public Quiz getQuiz() {
         return quiz;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public ScoreStrategy getScoreStrategy() {
+        return scoreStrategy;
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+    }
+
+    public ArrayList<GivenAnswer> getPlayerAnswers() {
+        return playerAnswers;
+    }
+
+    public void setPlayerAnswers(ArrayList<GivenAnswer> playerAnswers) {
+        this.playerAnswers = playerAnswers;
+    }
+
+    public String getWord() {
+        return word;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
     }
 }
