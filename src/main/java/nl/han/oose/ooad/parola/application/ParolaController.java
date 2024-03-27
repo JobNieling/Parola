@@ -39,7 +39,7 @@ public class ParolaController {
             }
             player.addQuizPerformance(new QuizPerformance(quiz, new BasicScoreStrategy()));
         } else {
-            throw new RuntimeException(playername + "heeft niet genoeg credits om een nieuwe quiz te spelen!");
+            throw new RuntimeException(playername + " heeft niet genoeg credits om een nieuwe quiz te spelen!");
         }
     }
 
