@@ -22,11 +22,11 @@ public class MultipleChoiceQuestion extends Question {
 
     @Override
     public String getQuestionText() {
-        List<String> allAsnwers = new ArrayList<>();
-        allAsnwers.add(rightAnswer);
-        allAsnwers.addAll(wrongAnswers);
-        Collections.shuffle(allAsnwers);
-        return getCategory() + " - " + getQuestion() + "\nKies 1 van deze opties: " + allAsnwers;
+        List<String> allAnswers = new ArrayList<>();
+        allAnswers.add(rightAnswer);
+        allAnswers.addAll(wrongAnswers);
+        Collections.shuffle(allAnswers);
+        return "\n" + getCategory() + " - " + getQuestion() + "\nKies 1 van deze opties: " + allAnswers;
     }
 
     // getters and setters

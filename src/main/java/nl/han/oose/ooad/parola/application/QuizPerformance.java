@@ -1,7 +1,7 @@
 package nl.han.oose.ooad.parola.application;
 
 import nl.han.oose.ooad.parola.application.question.Question;
-import nl.han.oose.ooad.parola.application.score.ScoreStrategy;
+import nl.han.oose.ooad.parola.application.score.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -14,23 +14,31 @@ public class QuizPerformance {
     private LocalDateTime endTime;
     private ArrayList<GivenAnswer> playerAnswers = new ArrayList<>();
     private String word;
+    public static final String SCORE_STRATEGY_BASIC = "SCORE_STRATEGY_BASIC";
+    public static final String SCORE_STRATEGY_CORRECT_ANSWERS = "SCORE_STRATEGY_CORRECT_ANSWERS";
+    public static final String SCORE_STRATEGY_TIME_BASED = "SCORE_STRATEGY_TIME_BASED";
+    public static final String SCORE_STRATEGY_WORD_LENGTH = "SCORE_STRATEGY_WORD_LENGTH";
 
-    public QuizPerformance(Quiz quiz, ScoreStrategy scoreStrategy) {
-        this.quiz = quiz;
-        this.scoreStrategy = scoreStrategy;
-        start();
+    public QuizPerformance(Quiz quiz) {
+        this(quiz, SCORE_STRATEGY_BASIC);
     }
 
-    public void start() {
+    public QuizPerformance(Quiz quiz, String scoreStrategyName) {
+        this.quiz = quiz;
+        switch (scoreStrategyName) {
+            case SCORE_STRATEGY_BASIC -> this.scoreStrategy = new BasicScoreStrategy();
+            case SCORE_STRATEGY_CORRECT_ANSWERS -> this.scoreStrategy = new CorrectAnswersScoreStrategy();
+            case SCORE_STRATEGY_TIME_BASED -> this.scoreStrategy = new TimeBasedScoreStrategy();
+            case SCORE_STRATEGY_WORD_LENGTH -> this.scoreStrategy = new WordLengthScoreStrategy();
+            default -> throw new RuntimeException("Invalid score strategy!");
+        }
         startTime = LocalDateTime.now();
     }
 
-    public void end() {
-        endTime = LocalDateTime.now();
-    }
-
     public int finalizeQuizPerformance(String word) {
+        //TODO: Validate that the word is made up of available letters.
         this.word = word;
+        endTime = LocalDateTime.now();
         score = scoreStrategy.calculateScore(startTime, endTime, playerAnswers, word);
         return score;
     }
@@ -39,8 +47,12 @@ public class QuizPerformance {
         return quiz.getQuestions().get(playerAnswers.size());
     }
 
+    public String getNextQuestionText() {
+        return getNextQuestion().getQuestionText();
+    }
+
     public void processAnswer(String answer) {
-        Question question = quiz.getQuestions().get(playerAnswers.size());
+        Question question = getNextQuestion();
         playerAnswers.add(new GivenAnswer(answer, question));
     }
 
@@ -48,12 +60,15 @@ public class QuizPerformance {
         return playerAnswers.size() == quiz.getQuestions().size();
     }
 
-    public ArrayList<Character> getLetters() {
-        ArrayList<Character> letters = new ArrayList<>();
+    public String getLetterString() {
+        String letterString = "";
         for (GivenAnswer givenAnswer : playerAnswers) {
-            letters.add(givenAnswer.getLetterIfCorrect());
+            Character c = givenAnswer.getLetterIfCorrect();
+            if (c != null) {
+                letterString = letterString + c + " ";
+            }
         }
-        return letters;
+        return letterString;
     }
 
     // getters and setters...

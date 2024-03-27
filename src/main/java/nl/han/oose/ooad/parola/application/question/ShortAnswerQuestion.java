@@ -23,7 +23,7 @@ public class ShortAnswerQuestion extends Question {
 
     @Override
     public String getQuestionText() {
-        return getCategory() + " - " + getQuestion();
+        return "\n" + getCategory() + " - " + getQuestion();
     }
 
     // getters and setters
