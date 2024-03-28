@@ -1,0 +1,2 @@
+We hebben een aantal astah-files met verschillende namen. Dit komt door gedoe met GitHub.
+Dit betekent dat niet alle diagrammen in alle astah-files up-to-date zijn. De diagrammen in de documentatie zijn wel up-to-date.
