@@ -36,10 +36,11 @@ public class QuizPerformance {
     }
 
     public int finalizeQuizPerformance(String word) {
-        //TODO: Validate that the word is made up of available letters.
-        this.word = word;
+        if (checkWordValid(word)) {
+            this.word = word;
+        }
         endTime = LocalDateTime.now();
-        score = scoreStrategy.calculateScore(startTime, endTime, playerAnswers, word);
+        score = scoreStrategy.calculateScore(startTime, endTime, playerAnswers, this.word);
         return score;
     }
 
@@ -62,13 +63,32 @@ public class QuizPerformance {
 
     public String getLetterString() {
         String letterString = "";
+        for (Character c : getLettersFromCorrectAnswers()) {
+            letterString = letterString + c + " ";
+        }
+        return letterString;
+    }
+
+    private ArrayList<Character> getLettersFromCorrectAnswers() {
+        ArrayList<Character> charList = new ArrayList<>();
         for (GivenAnswer givenAnswer : playerAnswers) {
             Character c = givenAnswer.getLetterIfCorrect();
             if (c != null) {
-                letterString = letterString + c + " ";
+                charList.add(c);
             }
         }
-        return letterString;
+        return charList;
+    }
+
+    private boolean checkWordValid(String word) {
+        ArrayList<Character> availableLetters = getLettersFromCorrectAnswers();
+        for (Character c : word.toUpperCase().toCharArray()) {
+            c = Character.toUpperCase(c);
+            if (!availableLetters.remove(c)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     // getters and setters...
