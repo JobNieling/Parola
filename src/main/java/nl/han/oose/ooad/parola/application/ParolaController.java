@@ -6,15 +6,21 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class ParolaController {
+    private static ParolaController instance;
     private ArrayList<Player> players;
     private ArrayList<Quiz> quizzes;
 
-    public static ParolaController getInstance() {
+    private ParolaController() {
         DataBuilder dataBuilder = new DataBuilder();
-        ParolaController parolaController = new ParolaController();
-        parolaController.setPlayers(dataBuilder.buildDummyPlayers("speler"));
-        parolaController.setQuizzes(dataBuilder.buildDummyQuizzen());
-        return parolaController;
+        this.players = dataBuilder.buildDummyPlayers("speler");
+        this.quizzes = dataBuilder.buildDummyQuizzen();
+    }
+
+    public static ParolaController getInstance() {
+        if (instance == null) {
+            instance = new ParolaController();
+        }
+        return instance;
     }
 
     public void startQuiz(String playername) {
